@@ -29,7 +29,7 @@ ARG TARGETPLATFORM
 ARG GOTOOLCHAIN
 RUN CGO_ENABLED=1 GOOS=linux GOARCH=${TARGETARCH} GO111MODULE=on go build -a -o mock-kms-plugin plugin.go
 
-FROM alpine:latest
+FROM alpine:3.23.3
 
 RUN apk add --update --no-cache ca-certificates gcompat
 RUN apk add --no-cache softhsm
